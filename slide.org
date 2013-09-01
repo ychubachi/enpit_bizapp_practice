@@ -3,9 +3,6 @@
 #+OPTIONS: H:2
 #+BEAMER_THEME: Madrid
 #+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
-#+startup: beamer
-#+LaTeX_CLASS: beamer
-#+LaTeX_CLASS_OPTIONS: [biger]
 
 * はじめに
 ** 授業の概要
@@ -38,9 +35,7 @@
 - VirtualBox/Vagrant
 - 仮想マシンの構築
 
-* デモンストレーション
-
-** シナリオ
+** デモンストレーション
 
 - 仮想環境
   - Vagrant up & ssh
@@ -54,15 +49,21 @@
 ** 準備
 
 - VirtualBox
+  https://www.virtualbox.org/wiki/Downloads
 - vagrant
+  http://www.vagrantup.com/
 
-** 仮想マシンへのログイン
+** 仮想マシンのDL
 
+- vagrant box add enpit http://goo.gl/cY6QhL
+- vagrant up
 - vagrant ssh
 
 ** Synced Folder
 
+- Gust OSからHost OSのファイルにアクセス
 - cd /vagrant
+- echo "Hello" > hello.txt
 
 ** Editors
 
@@ -80,7 +81,7 @@
 - Heroku | Cloud Application Platform
   https://www.heroku.com/
 
-** 公開鍵の登録(Heroku)
+** 公開鍵の作成と登録(Heroku)
 
 - heroku login
   - メールアドレスとパスワードを入力
@@ -90,9 +91,11 @@
 
 ** 公開鍵の登録(GitHubの設定)
 
-- GitHub
 - ssh公開鍵の登録
+  - Web browserで管理者画面
+  - copy & paste
 
+* Ruby on Rails
 ** Rails
 
 - cd /vagrant
@@ -102,3 +105,13 @@
 ** Port forward
 
 - Host:3000 -> Guest:3000
+
+** git repositoryの作成
+
+- git init
+- git add .
+- git commit -m 'Initial commit'
+
+** GitHubとの連携
+
+* おわりに
