@@ -1,0 +1,104 @@
+#+TITLE: ビジネスアプリケーション演習
+#+AUTHOR: 中鉢欣秀
+#+OPTIONS: H:2
+#+BEAMER_THEME: Madrid
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [biger]
+
+* はじめに
+** 授業の概要
+- ビジネスアプリケーションを構築するための基礎力としてのプログラミング力を身につけます
+- 分散型PBLを実施する上で必要となる知識やツールの使い方を基礎から学びます
+
+** 授業の目的
+- チームによるソフトウェア開発プロジェクトを円滑に実施するために不可欠な各種のツールや基礎的なプログラミングを学びます。
+ - 開発環境とプログラミング言語 Ruby
+ - リモートリポジトリ(GitHub)、テスト自動化、継続的インテグレーション、PaaS(Platform as a Service)を利用したソフトウェア開発の基礎
+- 上記を活用するための自己組織的なチームワーク
+
+** 開発環境
+- 仮想化技術
+  - VirtualBox + Vagrant
+- 開発言語とフレームワーク
+  - Ruby 2.0.0p247
+  - Rails 4.0.0
+- Cloud技術
+  - GitHub
+  - Heroku
+
+** Twitter
+
+- 授業ではTwitterを活用します
+- @ychubachiをフォローしてください
+
+** 本日の目標
+
+- VirtualBox/Vagrant
+- 仮想マシンの構築
+
+* デモンストレーション
+
+** シナリオ
+
+- 仮想環境
+  - Vagrant up & ssh
+- Ruby on Rails
+  - rails new
+- クラウド
+  - GitHub
+  - heroku
+
+* 仮想マシンのインストール
+** 準備
+
+- VirtualBox
+- vagrant
+
+** 仮想マシンへのログイン
+
+- vagrant ssh
+
+** Synced Folder
+
+- cd /vagrant
+
+** Editors
+
+- GNU Emacs - GNU Project - Free Software Foundation (FSF)
+  http://www.gnu.org/software/emacs/
+- welcome home : vim online
+  http://www.vim.org/
+- Sublime Text: The text editor you'll fall in love with
+  http://www.sublimetext.com/
+
+** GitHub/Heroku
+
+- GitHub
+  https://github.com/
+- Heroku | Cloud Application Platform
+  https://www.heroku.com/
+
+** 公開鍵の登録(Heroku)
+
+- heroku login
+  - メールアドレスとパスワードを入力
+- heroku keys:add
+  - ssh鍵を生成
+  - ssh鍵をherokuに登録
+
+** 公開鍵の登録(GitHubの設定)
+
+- GitHub
+- ssh公開鍵の登録
+
+** Rails
+
+- cd /vagrant
+- rails new my_app -T
+- rails server
+
+** Port forward
+
+- Host:3000 -> Guest:3000

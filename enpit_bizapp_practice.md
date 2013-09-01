@@ -12,10 +12,10 @@ theme
 :   rabbit
 
 
-# はじめに
+# 授業の目的
 
-この授業の*目的*は
-
+- ビジネスアプリケーションを構築するための基礎力としてのプログラミング力を身につけます。
+- 分散型 PBL を実施する上で必要となる知識やツールの使い方を基礎から学びます。
 
 # 授業の計画
 
@@ -25,7 +25,6 @@ theme
 # デモンストレーション
 
 - Vagrant up & ssh
-- ssh-keygen
 - rails new
 - git commit
 - GitHub
@@ -60,16 +59,22 @@ theme
 - [welcome home : vim online](http://www.vim.org/)
 - [Sublime Text: The text editor you'll fall in love with](http://www.sublimetext.com/)
 
-# Heroku - ssh公開鍵の登録
+# GitHubHerokuアカウント
+
+<!--
+- [GitHub](https://github.com/)
+- [Heroku | Cloud Application Platform](https://www.heroku.com/)
+-->
+
+# 公開鍵の登録(Heroku)
 
 - heroku login
-- メールアドレスとパスワードを入力
+  - メールアドレスとパスワードを入力
 - heroku keys:add
-- ssh鍵を生成
-- ssh鍵をherokuに登録
-- ~/.ssh
+  - ssh鍵を生成
+  - ssh鍵をherokuに登録
 
-# GitHubの設定 - ssh公開鍵の登録
+# 公開鍵の登録(GitHubの設定)
 
 - GitHub
 - ssh公開鍵の登録
