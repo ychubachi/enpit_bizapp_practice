@@ -1,0 +1,46 @@
+#+TITLE: ビジネスアプリケーション演習
+#+AUTHOR: 中鉢欣秀
+#+DATE: 2013-09-03
+#+OPTIONS: H:2
+#+BEAMER_THEME: Madrid
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
+
+* 昨日の復習
+** gitのグローバル設定
+- git config --global user.name "Your Name"
+- git config --global user.email you@example.com
+
+** GitHub repositoryの作成
+
+- Web browserで作成
+
+- git init
+- git add .
+- git commit -m "first commit"
+- git remote add origin git@github.com:ychubachi/second_enpit.git
+- git push -u origin master
+
+- git status
+- git log
+- git commit --amend
+- git remove -v
+
+** Rails Appの作成
+* Heroku
+** 公開鍵の登録(Heroku)
+
+- heroku login
+  - メールアドレスとパスワードを入力
+- heroku keys:add
+  - ssh鍵を生成
+  - ssh鍵をherokuに登録
+
+** Herokuへのdeploy
+
+- heroku create
+- git push heroku master
+
+* gitの使いこなし
+** branch
+** merge/conflict
+** GitHubによる共同作業

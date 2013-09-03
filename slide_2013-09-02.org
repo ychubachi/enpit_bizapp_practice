@@ -121,24 +121,10 @@ config.vm.network :forwarded_port, guest: 3000, host: 3000
 - Vagrantfileを編集
 - vagrant reload
 
-** git repositoryの作成
-
-- git init
-- git add .
-- git commit -m 'Initial commit'
-
 * Cloud
 ** Account
 https://t.co/BNuYs3KJcV
 ** GitHubとの連携
-
-** 公開鍵の作成と登録(Heroku)
-
-- heroku login
-  - メールアドレスとパスワードを入力
-- heroku keys:add
-  - ssh鍵を生成
-  - ssh鍵をherokuに登録
 
 ** 公開鍵の登録(GitHubの設定)
 
