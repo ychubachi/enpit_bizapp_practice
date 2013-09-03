@@ -6,12 +6,11 @@
 #+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
 #+OPTIONS: ^:nil
 
-* 昨日の復習
 * GitHub/Heroku
 ** gitのグローバル設定
 
-- git config --global user.name "Your Name"
-- git config --global user.email you@example.com
+- git config --global user.name "Tarou Sangi"
+- git config --global user.email tarou.sangi@example.com
 
 ** GitHubでリポジトリを作成
 - Web browserで「second_enpit」を作成
