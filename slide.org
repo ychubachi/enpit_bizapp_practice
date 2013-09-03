@@ -16,6 +16,8 @@
 - 上記を活用するための自己組織的なチームワーク
 
 ** 開発環境
+- OS
+  - Ubuntu 12.04
 - 仮想化技術
   - VirtualBox + Vagrant
 - 開発言語とフレームワーク
@@ -28,7 +30,29 @@
 ** Twitter
 
 - 授業ではTwitterを活用します
-- @ychubachiをフォローしてください
+- 次のアカウントをフォローしてください
+  - @ychubachi
+  - @enpit_ba
+- Hash tag
+  - #enpit_aiit
+  - #enpit_ba
+  - #enpit
+** Editors
+
+- GNU Emacs - GNU Project - Free Software Foundation (FSF)
+  http://www.gnu.org/software/emacs/
+- welcome home : vim online
+  http://www.vim.org/
+- Sublime Text: The text editor you'll fall in love with
+  http://www.sublimetext.com/
+
+** GitHub/Heroku
+
+- GitHub
+  https://github.com/
+- Heroku | Cloud Application Platform
+  https://www.heroku.com/
+
 
 ** 本日の目標
 
@@ -55,9 +79,20 @@
 
 ** 仮想マシンのDL
 
-- vagrant box add enpit http://goo.gl/cY6QhL
+- vagrant box add enpit enpit_package.box
+- vagrant init enpit
 - vagrant up
+
+** Macの場合
+
 - vagrant ssh
+
+** Windowsの場合
+
+hostname: localhost
+port: 2222
+user: vagrant
+password: vagrant
 
 ** Synced Folder
 
@@ -65,21 +100,36 @@
 - cd /vagrant
 - echo "Hello" > hello.txt
 
-** Editors
+* Ruby on Rails
+** Rails
 
-- GNU Emacs - GNU Project - Free Software Foundation (FSF)
-  http://www.gnu.org/software/emacs/
-- welcome home : vim online
-  http://www.vim.org/
-- Sublime Text: The text editor you'll fall in love with
-  http://www.sublimetext.com/
+- cd /vagrant
+- rails new my_app -T
+- rails server
 
-** GitHub/Heroku
+** Port forward
 
-- GitHub
-  https://github.com/
-- Heroku | Cloud Application Platform
-  https://www.heroku.com/
+- Host:8080 -> Guest: 80
+- Host:3000 -> Guest: 3000
+
+===
+config.vm.network :forwarded_port, guest: 3000, host: 3000
+===
+
+
+- Vagrantfileを編集
+- vagrant reload
+
+** git repositoryの作成
+
+- git init
+- git add .
+- git commit -m 'Initial commit'
+
+* Cloud
+** Account
+https://t.co/BNuYs3KJcV
+** GitHubとの連携
 
 ** 公開鍵の作成と登録(Heroku)
 
@@ -94,24 +144,5 @@
 - ssh公開鍵の登録
   - Web browserで管理者画面
   - copy & paste
-
-* Ruby on Rails
-** Rails
-
-- cd /vagrant
-- rails new my_app -T
-- rails server
-
-** Port forward
-
-- Host:3000 -> Guest:3000
-
-** git repositoryの作成
-
-- git init
-- git add .
-- git commit -m 'Initial commit'
-
-** GitHubとの連携
 
 * おわりに
