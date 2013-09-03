@@ -6,26 +6,31 @@
 #+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
 
 * 昨日の復習
+* GitHub/Heroku
 ** gitのグローバル設定
+
 - git config --global user.name "Your Name"
 - git config --global user.email you@example.com
 
-** GitHub repositoryの作成
+** GitHubでリポジトリを作成
+- Web browserで「second_enpit」を作成
 
-- Web browserで作成
-
+** Rails Appの作成
+- rails new second_enpit
+- cd second_enpit
 - git init
 - git add .
 - git commit -m "first commit"
 - git remote add origin git@github.com:ychubachi/second_enpit.git
 - git push -u origin master
 
+** git commands
+
 - git status
 - git log
 - git commit --amend
 - git remove -v
 
-** Rails Appの作成
 * Heroku
 ** 公開鍵の登録(Heroku)
 
@@ -37,10 +42,9 @@
 
 ** Herokuへのdeploy
 
+- Gemfileの編集
+- bundle install --without production
+- git add .
+- git commit -m 'Update Gemfile for heroku'
 - heroku create
 - git push heroku master
-
-* gitの使いこなし
-** branch
-** merge/conflict
-** GitHubによる共同作業
