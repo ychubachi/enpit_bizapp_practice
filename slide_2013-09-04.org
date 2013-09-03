@@ -4,6 +4,7 @@
 #+OPTIONS: H:2
 #+BEAMER_THEME: Madrid
 #+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
+#+OPTIONS: ^:nil
 
 * gitの使いこなし
 ** branch
