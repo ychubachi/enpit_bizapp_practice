@@ -87,6 +87,22 @@ eval "$(rbenv init -)"
 
 ** IDの変更
 
+アプリID/デベロッパーID
+(applicationId / developerId)
+1050107052908366718
+
+application_secret
+f75b547045411525bf859f2026234d790d3af988
+
+アフィリエイトID
+(affiliateId)
+11b23d92.8f6b6ff4.11b23d93.2a5a7e04
+
+コールバック許可ドメイン
+rocky-anchorage-9757.herokuapp.com
+
+ポリシーURL
+
 * ライブコーディング
 ** ライブコーディング
 - 目標
