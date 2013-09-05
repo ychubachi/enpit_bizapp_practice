@@ -1,0 +1,96 @@
+#+TITLE: ビジネスアプリケーション演習
+#+AUTHOR: 中鉢欣秀
+#+DATE: 2013-09-05
+#+OPTIONS: H:2
+#+BEAMER_THEME: Madrid
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
+#+OPTIONS: ^:nil
+
+* 補足
+** GitHub補足
+- masterブランチは常に最新にしよう
+  - git checkout master
+  - git fetch
+  - git pull origin master
+
+- 作業が完了してPull Reqする前に，masterをマージしておこう
+  - git checkout my_branch
+  - git merge master
+  - （conflictの解消）
+  - git stage .
+  - git commit
+  - git push origin my_branch
+  - （pull requestの送信）
+
+** Zsh & oh-my-zsh
+
+- robbyrussell/oh-my-zsh
+  - https://github.com/robbyrussell/oh-my-zsh
+- 'The manual way'参照
+- rbenv設定追加
+
+  - export PATH="$HOME/.rbenv/bin:$PATH"
+  - eval "$(rbenv init -)"
+
+- 再ログイン
+
+* 楽天API
+** 楽天IDの取得
+- 楽天ID
+  - API利用に必要
+  - 持っていない場合は作成
+
+** 楽天APIについて
+- 楽天ウェブサービス(RAKUTEN WEBSERVICE)
+  - http://webservice.rakuten.co.jp/
+
+- 楽天ウェブサービス: API一覧
+  - http://webservice.rakuten.co.jp/document/
+
+- 楽天ウェブサービス(RAKUTEN WEBSERVICE) : APIテストフォーム
+  - https://webservice.rakuten.co.jp/explorer/api/
+
+** アプリ新規登録
+- 楽天ウェブサービス: 新規アプリ登録
+  - https://webservice.rakuten.co.jp/app/create
+
+- 入力フォーム
+ - アプリ名
+ - アプリURL
+
+* サンプルアプリ
+** サンプルアプリ
+- GitHub
+  - https://github.com/kawahara/rakuten-ws-rails-sample
+- Heroku
+  - http://floating-headland-7880.herokuapp.com/
+
+** Fork
+- GitHubでのforkとは？
+- forkしたrepoのclone
+
+** コードの解読
+- find .
+- less Gemfile
+- rake routes
+- yard
+
+** アプリ新規登録
+- herokuでのURL取得
+  - heroku create
+
+- 楽天ウェブサービス: 新規アプリ登録
+  - 入力フォーム
+   - アプリ名
+   - アプリURL
+
+** IDの変更
+
+* ライブコーディング
+** ライブコーディング
+- 目標
+  - RSpec
+  - travis CI
+  - Refactoring
+- ライブコーディング=筋書きのないドラマ
+- しっかりメモをとってください！
