@@ -28,9 +28,10 @@
   - https://github.com/robbyrussell/oh-my-zsh
 - 'The manual way'参照
 - rbenv設定追加
+  - emacs .zshrc
 
-  - export PATH="$HOME/.rbenv/bin:$PATH"
-  - eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 - 再ログイン
 
