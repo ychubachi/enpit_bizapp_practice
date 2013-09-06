@@ -7,6 +7,17 @@
 #+OPTIONS: ^:nil
 
 * まとめ
+** tgetter
+Thanks @yukio_saitoh, @himajin315 and other menbers!
+- #1
+  - http://togetter.com/li/558221
+- #2
+  - http://togetter.com/li/558688
+- #3
+  - http://togetter.com/li/559025
+- #4
+  - http://togetter.com/li/559675
+
 ** Gitの便利ツール
 - magit
 - GitHub tool
