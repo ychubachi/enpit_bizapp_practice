@@ -91,10 +91,11 @@
 
 ** Windowsの場合
 
-hostname: localhost
-port: 2222
-user: vagrant
-password: vagrant
+- puttyなどのターミナルでアクセス
+  - hostname: localhost
+  - port: 2222
+  - user: vagrant
+  - password: vagrant
 
 ** Synced Folder
 
@@ -104,28 +105,28 @@ password: vagrant
 
 * Ruby on Rails
 ** Rails
-
-- cd /vagrant
-- rails new my_app -T
-- rails server
+*** Railsアプリの生成と起動
+#+begin_src sh
+cd /vagrant
+rails new my_app -T
+rails server
+#+end_src
 
 ** Port forward
 
-- Host:8080 -> Guest: 80
-- Host:3000 -> Guest: 3000
-
-===
-config.vm.network :forwarded_port, guest: 3000, host: 3000
-===
-
+- Host OSからGuest OSへのアクセス
+  - Host:3000 -> Guest: 3000
 
 - Vagrantfileを編集
+  - config.vm.network :forwarded_port, guest: 3000, host: 3000
+
 - vagrant reload
 
 * Cloud
 ** Account
-https://t.co/BNuYs3KJcV
-** GitHubとの連携
+
+- 次のフォームにgithub/herokuのアカウントを記入してください
+  - https://t.co/BNuYs3KJcV
 
 ** 公開鍵の登録(GitHubの設定)
 
@@ -134,3 +135,29 @@ https://t.co/BNuYs3KJcV
   - copy & paste
 
 * おわりに
+** Babel
+   :PROPERTIES:
+   :BEAMER_envargs: [t]
+   :END:
+*** Octave code						      :BMCOL:B_block:
+
+*** The output						      :BMCOL:B_block:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :BEAMER_env: block
+    :BEAMER_envargs: <2->
+    :END:
+
+#+results: octaveexample
+#+begin_example
+A =
+
+   1   2
+   3   4
+
+x =
+
+  -1
+   1
+
+#+end_example

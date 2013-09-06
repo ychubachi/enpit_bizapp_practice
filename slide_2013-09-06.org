@@ -40,30 +40,33 @@ Thanks @yukio_saitoh, @himajin315 and other menbers!
 - #4
   - http://togetter.com/li/559675
 
-** Gitの便利ツール
-- magit
-- GitHub tool
+* 付録
+** RSpec入Railsの作り方
 
-* RSpec入Railsの作り方
-  - test_unitなしで作成
+参考 https://github.com/rspec/rspec-rails
 
-    rails new rails_rspec -T
+*** test_unitなしで作成
 
-  - Gemfileを編集
+#+begin_src sh
+rails new rails_rspec -T
+#+end_src
 
-    group :development, :test do
-      gem 'rspec-rails', '~> 2.0'
-    end
+*** Gemfileを編集
+#+begin_src ruby
+group :development, :test do
+    gem 'rspec-rails', '~> 2.0'
+end
+#+end_src
 
-  - Bundler
+*** Bundler
 
-    bundle install
-    rails generate rspec:install
+#+begin_src sh
+bundle install
+rails generate rspec:install
+#+end_src
 
-  - db
+*** db
 
-    rake db:migrate
-
-  - 参考
-
-    https://github.com/rspec/rspec-rails
+#+begin_src sh
+rake db:migrate
+#+end_src

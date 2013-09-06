@@ -7,6 +7,5 @@
 #+OPTIONS: ^:nil
 
 * gitの使いこなし
-** branch
-** merge/conflict
-** GitHubによる共同作業
+** Wiki
+   http://www.chubachi.net/ccsd/index.php?title=Skill_Set/Git
