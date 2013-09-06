@@ -1,0 +1,247 @@
+2013/9/3 rails,Herokuメモ
+
+- vagrantで仮想マシンをアップ
+
+$ vagrant up
+
+-- 3000番ポートのフォワード設定を確認
+
+- 仮想マシンに接続
+
+$ vagrant ssh
+
+win: localhost:2222 
+
+$ cd /vagrant/ <- ホストと共有されている
+$ mkdir work
+$ cd work
+
+新しく作る
+
+$ rails new second_enpit -T
+$ cd second_enpit
+
+gitのグローバル設定
+
+$ git config --global user.name "名前"
+$ git config --global user.email "電子メール"
+
+$ git config --list
+
+$ git init
+$ git add .
+
+$ git status
+
+.gitignoreの確認（railsが勝手に設定してくれている）
+
+英語はちゃんと読みましょう！！
+
+git commitはステージされているファイルに対して行う
+
+$ git commit -m "first commit"
+
+$ git log
+
+$ git remote add origin git@github.com:<ユーザ>/second_enpit.git
+
+
+$ git remote -v
+
+どこに接続するか確認できる。
+
+$ git push -u origin master
+
+-uは次回以降使わない事（-u: set upstream）
+
+ホストのVagrantfileを編集
+config.vm.network :forwarded_port, guest: 3000, host: 3000
+
+$ rails server
+
+ホストのブラウザで http://localhost:3000
+を見て、Welcome boardが見える事を確認
+
+以下、ゲストOSでrailsでスキャフォルドを作る
+
+$ rails g scaffold Person name:string age:integer
+
+$ rake db:migrate
+
+$ rails dbconsole
+sqlite> .table
+people schema_migrations
+sqlite> .schema people
+・・・スキームが見える・・・
+
+config/routes.rb
+
+#root 'welcome#index' 
+ |
+root 'people#index'
+
+$ rake routes
+
+app/controllers/people_controller.rbを見る。書き換える。
+
+$ git add .
+$ git status
+
+git reset <ファイル名> で、指定したファイルをステージから降ろす事ができる。
+
+$ git commit 
+
+$ git status 
+
+リモートよりブランチが1個進んでいる事が分かる。
+
+$ git push
+
+ブラウザで確認しましょう。
+
+* Herokuへのデプロイ
+
+$ heroku login
+-> ログイン情報を入力
+
+$ heroku keys:add　でキーの登録
+
+$ heroku create
+
+git@heroku.com:shelterd-earth-2265.git
+
+Gemfile ファイルの編集
+
+$ bundle install --without production
+
+$ git push heroku master
+
+$ heroku run rake db:migrate
+
+Getting started with Railsの勉強
+http://guides.rubyonrails.org/getting_started.html
+
+Herokuの勉強
+
+
+# 3日目
+
+Gitの使い方
+
+# 4日目
+
+* 楽天API
+
+川原さんリポジトリをvagrantにclone
+
+$ cd /vagrant/work
+$ git clone git@github.com:kawahara/rakuten-ws-rails-sample.git
+
+$ bundle install --without production
+$ rake routes
+
+$ rake server
+
+$ heroku login
+
+楽天のページでIDを貰う。
+
+itemsearch_controller.rb にIDを反映
+
+ローカルで確認
+
+デプロイ
+
+Travis CIとの連携
+
+GitHubにpushするとTravis CIが受け取り、自動的にHerokuにデプロイする。
+
+Travisを試すためのブランチを切る
+
+$ git checkout -b travis
+
+プロジェクトのルートに .travis.yml を作る
+
+language: ruby
+rvm:
+  - 2.0.0
+
+Gemfile に追加
+
+group :test do
+  gem 'rake'
+end
+
+$ bundle install 
+
+.travis.yml もstageしましょう
+
+マスターにマージ
+
+$ git checkout master
+$ git marge travis
+
+$ git branch -v で確認
+
+Travis CIの設定
+
+- アカウントを作る
+
+今度はGitHubで設定
+
+GitHub のセッティング
+
+Service Hooks を選択 -> Travisを探してクリック
+ガイドにしたがう
+（Travis profile pages からcredentialを見て...）
+
+当該アプリ（楽天のもの）のスイッチをONにする
+
+$ git push するとTravis CIが反応するはず。（ちょっと待つ）
+
+テストコードを書いていないからテストは通る
+
+* Travis CIがHerokuへデプロイする設定
+
+.travis.ymlに以下を記述
+
+deploy:
+	privider: heroku
+	app: <your-app-name>
+	api_key: <Herokuからもらったキー>
+
+・・・あるいはtravisというコマンドがある。
+$ gem install travis -v 1.5.3 --no-rdoc --no-ri
+$ travis version
+（確認）
+
+$ travis setup heroku で全部できる。
+
+もう一度GitHubにプッシュしてみます。
+今度は自動でデプロイできます。
+
+* テストを作る
+
+まず testディレクトリを消す
+
+rspec: コードのテスト
+cucumber: 受け入れテスト
+
+Gemfileに追加
+
+group : test do
+  gem 'rake'
+  gem 'rspec-rails'
+end
+
+ついでに以下も追加
+
+gem 'httpclient'
+
+$ rails g rspec:controller bookmark
+$ rails g controller bookmark
+
+spec/controllers/bookmark_controller_rspec.rb
+
+require 'spec_helper'
+...
