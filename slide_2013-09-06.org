@@ -6,6 +6,28 @@
 #+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
 #+OPTIONS: ^:nil
 
+* グループワーク
+** mini-mini project
+
+- せっかく分散開発のツールを学んだので，mini-mini projectをやりましょう
+  - Rails AppをHerokuで動かすまで
+  - 内容自由（楽天 APIはつかわなくてよい）
+
+- 誰かがRepositoryを作ってください
+  - Twitterでつぶやく
+
+- *LEAN STARTUP* でやりましょう
+  - まずは極小アプリをCIする
+  - 機能は逐次的に追加する
+
+- タイムマネジメント
+  -      〜13:30 作戦会議
+  -      〜14:00 CI設定完了
+  - 14:30〜14:45 休憩
+  - 14:45〜16:15 作業
+  - 16:15〜16:30 （中間）発表
+
+
 * まとめ
 ** tgetter
 Thanks @yukio_saitoh, @himajin315 and other menbers!
@@ -21,3 +43,27 @@ Thanks @yukio_saitoh, @himajin315 and other menbers!
 ** Gitの便利ツール
 - magit
 - GitHub tool
+
+* RSpec入Railsの作り方
+  - test_unitなしで作成
+
+    rails new rails_rspec -T
+
+  - Gemfileを編集
+
+    group :development, :test do
+      gem 'rspec-rails', '~> 2.0'
+    end
+
+  - Bundler
+
+    bundle install
+    rails generate rspec:install
+
+  - db
+
+    rake db:migrate
+
+  - 参考
+
+    https://github.com/rspec/rspec-rails
